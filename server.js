@@ -11,6 +11,11 @@ if (process.env.NODE_ENV !== "production") {
 
 app.use(require("connect-assets")());
 
-server.listen(process.env.PORT || 3000, function () {
-  console.log("listening on", this.address());
-});
+if (require.main === module) {
+  server.listen(process.env.PORT || 3000, function () {
+    console.log("listening on", this.address());
+  });
+}
+else {
+  module.exports = server;
+}
