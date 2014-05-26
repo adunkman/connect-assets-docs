@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === "production") {
+  var newrelic = require("newrelic");
+}
+
 var express = require("express");
 var http = require("http");
 var app = express();
