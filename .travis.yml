@@ -5,6 +5,5 @@ node_js:
 
 deploy:
   provider: heroku
-  app: connect-assets
   api_key:
     secure: PQkxzlV+GI8FwQFf3ECUlu7Mi9cmhV1bdGFXAQ0MUR9b3ED/lOPskJYDckmqddQbMs9h+bvvp1UVWRhKVTNi9ceM/dd4JeCQEyxpCUrGpFWsTwS9KvbUDNxQnhg0xMY49GgK0BPueEzBkqSh7FRZqEu8j3aOuqoZMxNDCJRBrGs=
