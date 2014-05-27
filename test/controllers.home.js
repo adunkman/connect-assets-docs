@@ -15,5 +15,14 @@ describe("controllers/home", function () {
         done();
       });
     });
+
+    it("responds to GET /ping", function (done) {
+      this.get("/ping", function (err, res, body) {
+        expect(err).to.be(null);
+        expect(res.statusCode).to.be(200);
+        expect(body).to.contain("pong");
+        done();
+      });
+    });
   });
 });
