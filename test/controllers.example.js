@@ -21,7 +21,6 @@ describe("controllers/example", function () {
     this.get("/examples/should-404", function (err, res, body) {
       expect(err).to.be(null);
       expect(res.statusCode).to.be(404);
-      expect(body).to.contain("Not Found");
       done();
     });
   });
