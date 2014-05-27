@@ -1,4 +1,4 @@
-var jade = require("jade/lib/runtime");
+var hljs = require("highlight.js");
 
 var demo = function (app) {
   app.locals.demo = demo.helper;
@@ -9,8 +9,8 @@ demo.helper = function (code) {
 
   return [
     '<div class="demo">',
-      '<code class="pre">', jade.escape(code), '</code>',
-      '<code class="post">', jade.escape(evaluated), '</code>',
+      '<code class="pre">', hljs.highlight("javascript", code).value, '</code>',
+      '<code class="post">', hljs.highlight("html", evaluated).value, '</code>',
     '</div>'
   ].join("");
 };
