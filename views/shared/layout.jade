@@ -1,5 +1,19 @@
 doctype html
-html
-head
-body
-  block main-content
+html(lang="en-US")
+  head
+    meta(charset="UTF-8")
+    meta(name="author", content="Andrew Dunkman")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+
+    title connect-assets
+
+    != css("main.css")
+  body(class=view(locals))
+    header.global-header
+      h1: a(href="/") connect-assets
+
+    section.main-content
+      block main-content
+
+    footer.global-footer
+      a(href="https://github.com/adunkman/connect-assets") github
