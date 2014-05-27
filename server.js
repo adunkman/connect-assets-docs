@@ -6,7 +6,6 @@ var express = require("express");
 var http = require("http");
 var fs = require("fs");
 var app = express();
-var server = http.createServer(app);
 
 app.set("view engine", "jade");
 
@@ -28,10 +27,10 @@ for (var i = controllers.length - 1; i >= 0; i--) {
 };
 
 if (require.main === module) {
-  server.listen(process.env.PORT || 3000, function () {
+  http.createServer(app).listen(process.env.PORT || 3000, function () {
     console.log("listening on", this.address());
   });
 }
 else {
-  module.exports = server;
+  module.exports = http.createServer.bind(http, app);
 }

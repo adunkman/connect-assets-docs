@@ -16,4 +16,13 @@ describe("controllers/example", function () {
       });
     });
   });
+
+  it("404s if example isn’t found", function (done) {
+    this.get("/examples/should-404", function (err, res, body) {
+      expect(err).to.be(null);
+      expect(res.statusCode).to.be(404);
+      expect(body).to.contain("Not Found");
+      done();
+    });
+  });
 });
