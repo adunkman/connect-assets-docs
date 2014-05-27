@@ -10,7 +10,7 @@ var server = http.createServer(app);
 
 app.set("view engine", "jade");
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production" && process.env.NODE_ENV !== "test") {
   app.use(require("morgan")("dev"));
 }
 
