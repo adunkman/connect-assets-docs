@@ -1,7 +1,29 @@
 extends ../shared/layout
 
 block main-content
-  h1 connect-assets docs and demos
+  p Transparent file compilation and dependency management for Node’s <a href="https://github.com/senchalabs/connect">connect</a> framework in the spirit of the Rails 3.1 asset pipeline.
+
+  code.block.
+    npm install connect-assets
+
+  p Also install any specific compilers you’ll need:
+
+  code.block.
+    npm install coffee-script
+    npm install stylus
+    npm install less
+    npm install node-sass
+    npm install haml-coffee
+    npm install jade
+    npm install ejs
+
+  p Then add this line to your app’s configuration:
+
+  != highlight('var app = require("express")();\n\napp.use(require("connect-assets")());')
+
+  p Finally, create an <code>assets</code> directory in your project and throw all assets compiled into JavaScript into <code>/assets/js</code> and all assets compiled into CSS into <code>/assets/css</code>.
+
+
 
   ul
     li: a(href="examples/functions") functions
