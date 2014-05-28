@@ -1,0 +1,16 @@
+extends layout
+
+block example-content
+  h2 Helper Functions
+
+  != demo('js("main.js")')
+  != demo('css("main.css")')
+  != demo('assetPath("main.js")')
+
+  h2 Function Scope
+
+  p By default, connect-assets exposes its helper functions in the <code>global</code> scope.
+
+  p If you’re feeling particularly responsible (or would like to include two copies of connect-assets without them interfering with each other) you can change the scope:
+
+  != highlight('var app = require("express")();\n\nrequire("connect-assets")({\n  helperContext: app.locals\n});')

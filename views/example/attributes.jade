@@ -1,4 +1,15 @@
 extends layout
 
 block example-content
+  h2 Boolean Attributes
+
+  p It’s quite simple to pass boolean attributes (like <code>defer</code> and <code>async</code>):
+
   != demo('js("main.js", { defer: true })')
+  != demo('js("main.js", { async: true })')
+
+  h2 Arbitrary Attributes
+
+  p Any arbitrary attributes can be passed, boolean or not:
+
+  != demo('css("main.css", { "data-turbolinks-track": true, "data-bind": "some-custom-value" })')

@@ -14,7 +14,8 @@ example.show = function (req, res, next) {
     }
     else {
       return res.render(template, {
-        title: slug
+        title: slug,
+        version: require("connect-assets/package").version
       });
     }
   });
