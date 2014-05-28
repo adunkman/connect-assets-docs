@@ -11,7 +11,7 @@ view.helper = function (locals) {
 
   var view = filename.replace(directory, "").replace(extension, "");
 
-  return view.replace(new RegExp(path.sep, "g"), "-");
+  return view.split(path.sep).join(" ");
 };
 
 module.exports = view;

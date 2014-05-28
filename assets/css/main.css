@@ -1,3 +1,5 @@
 /*= require vendor/normalize.css */
 /*= require vendor/highlightjs-solarized-light.css */
 /*= require global.css */
+
+/*= require_tree pages */

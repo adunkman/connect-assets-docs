@@ -9,8 +9,12 @@ demo.helper = function (code) {
 
   return [
     '<div class="demo">',
-      '<code class="pre">', hljs.highlight("javascript", code).value, '</code>',
-      '<code class="post">', hljs.highlight("html", evaluated).value, '</code>',
+      '<div class="input">',
+        '<code class="block">', hljs.highlight("javascript", code).value, '</code>',
+      '</div>',
+      '<div class="output">',
+        '<code class="block">', hljs.highlight("html", evaluated).value, '</code>',
+      '</div>',
     '</div>'
   ].join("");
 };
