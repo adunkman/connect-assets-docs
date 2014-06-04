@@ -8,7 +8,10 @@ home.about = function (req, res, next) {
 };
 
 home.ping = function (req, res, next) {
-  require("newrelic").setIgnoreTransaction(true);
+  if (process.env.NODE_ENV === "production") {
+    require("newrelic").setIgnoreTransaction(true);
+  }
+
   return res.send("pong");
 };
 
